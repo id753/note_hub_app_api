@@ -35,7 +35,7 @@ export const loginUser = async (req, res, next) => {
 
   const user = await User.findOne({ email });
   if (!user) {
-    return next(createHttpError(401), 'Invalid credentials');
+    return next(createHttpError(401, 'Invalid credentials'));
   }
 
   const isValidPassword = await bcrypt.compare(password, user.password);
@@ -51,32 +51,36 @@ export const loginUser = async (req, res, next) => {
 };
 
 export const refreshUserSession = async (req, res, next) => {
-  const session = await Session.findOne({
-    _id: req.cookies.sessionId,
-    refreshToken: req.cookies.refreshToken,
-  });
-  if (!session) {
-    return next(createHttpError(401), 'Session not found');
+  try {
+    const session = await Session.findOne({
+      _id: req.cookies.sessionId,
+      refreshToken: req.cookies.refreshToken,
+    });
+
+    if (!session) {
+      return next(createHttpError(401, 'Session not found'));
+    }
+
+    // Исправлено имя переменной и логика
+    const isRefreshTokenExpired =
+      new Date() > new Date(session.refreshTokenValidUntil);
+
+    if (isRefreshTokenExpired) {
+      return next(createHttpError(401, 'Refresh token expired'));
+    }
+
+    // Удаляем старую сессию перед созданием новой (Rotation)
+    await Session.deleteOne({ _id: session._id });
+
+    const newSession = await createSession(session.userId);
+    setSessionCookies(res, newSession);
+
+    res.status(200).json({
+      message: 'Session refreshed',
+    });
+  } catch (error) {
+    next(error);
   }
-
-  const isSessionTokenYes =
-    new Date() > new Date(session.refreshTokenValidUntil);
-
-  if (isSessionTokenYes) {
-    return next(createHttpError(401, 'Session token expired'));
-  }
-
-  await Session.deleteOne({
-    _id: req.cookies.sessionId,
-    refreshToken: req.cookies.refreshToken,
-  });
-
-  const newSession = await createSession(session.userId);
-  setSessionCookies(res, newSession);
-
-  res.status(200).json({
-    message: 'Session refreshed',
-  });
 };
 
 export const logoutUser = async (req, res) => {

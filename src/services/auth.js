@@ -15,25 +15,31 @@ export const createSession = (userId) => {
   });
 };
 
-const isProd = process.env.NODE_ENV === 'production';
-
 export const setSessionCookies = (res, session) => {
+  const isProd = process.env.NODE_ENV === 'production';
+
   const cookieOptions = {
-    httpOnly: true,
-    secure: isProd, // secure только в проде
+    httpOnly: true, // Защита от XSS (JS не может прочитать куку)
+    secure: isProd, // В продакшене (HTTPS) обязательно true
+    // Если фронт и бек на разных доменах в проде, используем 'none'
+    // Если на одном (или в разработке на localhost), 'lax' — самый стабильный выбор
     sameSite: isProd ? 'none' : 'lax',
+    path: '/', // Чтобы куки были доступны для всех путей сайта
   };
 
+  // Устанавливаем Access Token
   res.cookie('accessToken', session.accessToken, {
     ...cookieOptions,
     maxAge: FIFTEEN_MINUTES,
   });
 
+  // Устанавливаем Refresh Token
   res.cookie('refreshToken', session.refreshToken, {
     ...cookieOptions,
     maxAge: ONE_DAY,
   });
 
+  // Устанавливаем ID сессии
   res.cookie('sessionId', session._id, {
     ...cookieOptions,
     maxAge: ONE_DAY,
