@@ -22,3 +22,22 @@ export const updateUserAvatar = async (req, res, next) => {
 export const getUserController = async (req, res) => {
   res.status(200).json(req.user);
 };
+
+export const updateMe = async (req, res, next) => {
+  try {
+    const updates = req.body;
+
+    const user = await User.findByIdAndUpdate(req.user._id, updates, {
+      new: true,
+      runValidators: true,
+    }).select('-password');
+
+    if (!user) {
+      return next(createHttpError(404, 'User not found'));
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
