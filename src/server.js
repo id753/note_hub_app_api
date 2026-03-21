@@ -32,6 +32,15 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message:
+      'Welcome to My API - Express app🚪for working with a collection of notes📝',
+    status: 'Server is running!',
+    documentation: 'https://github.com/id753/nodejs-hw',
+  });
+});
+
 app.use(authRoutes);
 app.use(notesRoutes);
 
@@ -44,15 +53,6 @@ app.use(errors());
 app.use(errorHandler);
 
 await connectMongoDB();
-
-app.get('/', (req, res) => {
-  res.status(200).json({
-    message:
-      'Welcome to My API - Express app🚪for working with a collection of notes📝',
-    status: 'Server is running!',
-    documentation: 'https://github.com/id753/nodejs-hw',
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
