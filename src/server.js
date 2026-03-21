@@ -21,8 +21,12 @@ const PORT = process.env.PORT ?? 3000;
 app.use(logger);
 app.use(
   cors({
-    origin: 'http://localhost:3000', // фронтенд
-    credentials: true, // важно для HttpOnly кук
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      process.env.FRONTEND_URL,
+    ],
+    credentials: true,
   }),
 );
 app.use(express.json());
@@ -40,6 +44,15 @@ app.use(errors());
 app.use(errorHandler);
 
 await connectMongoDB();
+
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message:
+      'Welcome to My API - Express app🚪for working with a collection of notes📝',
+    status: 'Server is running!',
+    documentation: 'https://github.com/id753/nodejs-hw',
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
