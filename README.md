@@ -11,49 +11,32 @@
 ### Backend Experience
 🔑 User Authentication & Authorization
 - 📝 **User Registration & Login:** Secure onboarding using email and hashed passwords.
-
    - 🎟 **Dual-Token System**: Session-based authentication using Access and Refresh Tokens.
-
   - 🛡 **Secure Cookie Handling**: Protection against attacks using httpOnly, sameSite, and secure flags.
-
   - 🔄 **Session Rotation**: Automated token expiration and refresh mechanisms to keep users securely logged in.
 
 🛡 Password Management
-
     - 📧 **Reset Requests**: Ability to request a password reset link via automated emails.
-
    - 🔐 **Secure Recovery Flow**: Identity verification using short-lived JWT tokens.
-
   - 🧹 **Session Cleanup**: Automatic invalidation of all active sessions after a password change for maximum security.
 
 📝 Notes Management
-
    - 🛠 **Full CRUD Lifecycle**: Create, Read, Update, and Delete notes with ease.
-
   - 🏷 **Smart Tagging**: Organize entries using categories (e.g., Todo, Work, Personal).
-
   - 🔍 **Advanced Search**: Integrated full-text search across titles and content for quick retrieval.
 
 👤 User Profile
-
   - ℹ️ **Profile Retrieval**: Dedicated endpoints to fetch the current user's data.
-
   - ✍️ **Data Updates**: Seamlessly update personal information and preferences.
-
   - 🖼 **Avatar Management**: Upload and host profile pictures with Cloudinary cloud integration.
 
 🛠 API Utilities & Middleware
-
   - 📜 **Centralized Logging**: Real-time request monitoring and debugging with Pino.
-
   - 🚧 **Global Error Handling**: Robust middleware for standardized and clean error responses.
-
   - ✅ **Input Validation**: Strict data integrity checks using Joi and Celebrate.
-
   - 🌐 **CORS Configuration**: Securely managed cross-origin requests for frontend integration.
 
 ✉️ Email Notifications
-
   - 🚀 **SMTP Integration**: Reliable delivery of system emails for password resets using Nodemailer and Handlebars templates.
 
 ## Getting Started (Backend)
