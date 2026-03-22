@@ -4,6 +4,7 @@
 ## 🎨 [Live Project](https://nodejs-hw-jx7n.onrender.com/)
 ## ⚙️ [Frontend Repository](https://github.com/id753/note_hub_app)
 
+
 ##  🛠️ Backend Tech Stack
 ### Node.js, Express.js, MongoDB, Mongoose; REST API; Validation (Joi, Celebrate); Logging (Pino); Environment & Middleware (dotenv, CORS, http-errors); API Testing (Postman); Deployment (Render)
 
