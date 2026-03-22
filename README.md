@@ -42,7 +42,7 @@
 ## Getting Started (Backend)
 1️⃣ Clone the repository
    
-    git clone <your-repository-link>
+    git clone git@github.com:id753/note_hub_app_api.git
 2️⃣ Install dependencies
 
     npm install
