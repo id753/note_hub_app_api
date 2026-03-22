@@ -1,29 +1,29 @@
 # NoteHub & User Management API
 ## A full-featured backend API built with Express.js for managing user accounts and personal notes. The system supports secure authentication, session management, password reset flows, and file uploads for user avatars.
 
-## 🎨 [Live Project](https://todo-project-api-x8pg.onrender.com/todos)
-## ⚙️ [Frontend Repository](https://github.com/id753/todo-project)
+## 🎨 [Live Project](https://nodejs-hw-jx7n.onrender.com/)
+## ⚙️ [Frontend Repository](https://github.com/id753/note_hub_app)
 
 ##  Backend Tech Stack
 ### Node.js, Express.js, MongoDB, Mongoose; REST API; Validation (Joi, Celebrate); Logging (Pino); Environment & Middleware (dotenv, CORS, http-errors); API Testing (Postman); Deployment (Render)
 
 ## Features
 ### Backend Experience
+📝 Notes Management
+- 🛠 **Full CRUD Lifecycle**: Create, Read, Update, and Delete notes with ease.
+- 🏷 **Smart Tagging**: Organize entries using categories (e.g., Todo, Work, Personal).
+- 🔍 **Advanced Search**: Integrated full-text search across titles and content for quick retrieval.
+  
 🔑 User Authentication & Authorization
 - 📝 **User Registration & Login:** Secure onboarding using email and hashed passwords.
 - 🎟 **Dual-Token System**: Session-based authentication using Access and Refresh Tokens.
-- 🛡 **Secure Cookie Handling**: Protection against attacks using httpOnly, sameSite, and secure flags.
+- 🛡 **Secure Cookie Handling**: Protection against attacks using __httpOnly__, sameSite, and secure flags.
 - 🔄 **Session Rotation**: Automated token expiration and refresh mechanisms to keep users securely logged in.
 
 🛡 Password Management
 - 📧 **Reset Requests**: Ability to request a password reset link via automated emails.
 - 🔐 **Secure Recovery Flow**: Identity verification using short-lived JWT tokens.
 - 🧹 **Session Cleanup**: Automatic invalidation of all active sessions after a password change for maximum security.
-
-📝 Notes Management
-- 🛠 **Full CRUD Lifecycle**: Create, Read, Update, and Delete notes with ease.
-- 🏷 **Smart Tagging**: Organize entries using categories (e.g., Todo, Work, Personal).
-- 🔍 **Advanced Search**: Integrated full-text search across titles and content for quick retrieval.
 
 👤 User Profile
 - ℹ️ **Profile Retrieval**: Dedicated endpoints to fetch the current user's data.
@@ -51,6 +51,7 @@ Copy .env.example to .env and edit if necessary:
 
     PORT=
     MONGO_URI=
+    etc. ...
 4️⃣ Run the server locally
 
     npm run dev
