@@ -1,13 +1,13 @@
-# NoteHub & User Management API
-## A full-featured backend API built with Express.js for managing user accounts and personal notes. The system supports secure authentication, session management, password reset flows, and file uploads for user avatars.
+# 📚 NoteHub & User Management API
+## A full-featured backend API built with Express.js for managing user accounts and personal notes. The system supports secure 🔑 authentication, session management, password reset flows, and file uploads for user avatars.
 
 ## 🎨 [Live Project](https://nodejs-hw-jx7n.onrender.com/)
 ## ⚙️ [Frontend Repository](https://github.com/id753/note_hub_app)
 
-##  Backend Tech Stack
+##  🛠️ Backend Tech Stack
 ### Node.js, Express.js, MongoDB, Mongoose; REST API; Validation (Joi, Celebrate); Logging (Pino); Environment & Middleware (dotenv, CORS, http-errors); API Testing (Postman); Deployment (Render)
 
-## Features
+## ⚡Features
 ### Backend Experience
 📝 Notes Management
 - 🛠 **Full CRUD Lifecycle**: Create, Read, Update, and Delete notes with ease.
