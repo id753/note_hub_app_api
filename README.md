@@ -1,5 +1,5 @@
 # 📚 NoteHub & User Management API
-## A full-featured backend API built with Express.js for managing user accounts and personal notes. The system supports secure 🔑 authentication, session management, password reset flows, and file uploads for user avatars.
+## A full-featured backend API built with Express.js 🚀 for managing user accounts and personal notes. The system supports secure 🔑 authentication, session management, password reset flows, and file uploads for user avatars.
 
 ## 🎨 [Live Project](https://nodejs-hw-jx7n.onrender.com/)
 ## ⚙️ [Frontend Repository](https://github.com/id753/note_hub_app)
@@ -62,7 +62,7 @@ The server will be available at: http://localhost:3000
 5️⃣ Test the API
 Use [Postman](https://www.postman.com/)  or any API testing tool.
 
-    Example request: GET http://localhost:3000/todos
+    Example request: GET http://localhost:3000/notes
 
 ## ⚠️ Note:
 The server is hosted on Render's free plan and may “sleep” when idle — the first load after waking up can take 30–50 seconds.
