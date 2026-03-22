@@ -16,28 +16,28 @@
   
 🔑 User Authentication & Authorization
 - 📝 **User Registration & Login:** Secure onboarding using email and hashed passwords.
-- 🎟 **Dual-Token System**: Session-based authentication using Access and Refresh Tokens.
-- 🛡 **Secure Cookie Handling**: Protection against attacks using __httpOnly__, sameSite, and secure flags.
+- 🎟 **Dual-Token System**: Session-based authentication using _Access_ and _Refresh_ Tokens.
+- 🛡 **Secure Cookie Handling**: Protection against attacks using _httpOnly_, _sameSite_, and secure flags.
 - 🔄 **Session Rotation**: Automated token expiration and refresh mechanisms to keep users securely logged in.
 
 🛡 Password Management
 - 📧 **Reset Requests**: Ability to request a password reset link via automated emails.
-- 🔐 **Secure Recovery Flow**: Identity verification using short-lived JWT tokens.
+- 🔐 **Secure Recovery Flow**: Identity verification using short-lived _JWT_ tokens.
 - 🧹 **Session Cleanup**: Automatic invalidation of all active sessions after a password change for maximum security.
 
 👤 User Profile
 - ℹ️ **Profile Retrieval**: Dedicated endpoints to fetch the current user's data.
 - ✍️ **Data Updates**: Seamlessly update personal information and preferences.
-- 🖼 **Avatar Management**: Upload and host profile pictures with Cloudinary cloud integration.
+- 🖼 **Avatar Management**: Upload and host profile pictures with _Cloudinary_ cloud integration.
 
 🛠 API Utilities & Middleware
 - 📜 **Centralized Logging**: Real-time request monitoring and debugging with Pino.
 - 🚧 **Global Error Handling**: Robust middleware for standardized and clean error responses.
-- ✅ **Input Validation**: Strict data integrity checks using Joi and Celebrate.
+- ✅ **Input Validation**: Strict data integrity checks using _Joi_ and _Celebrate_.
 - 🌐 **CORS Configuration**: Securely managed cross-origin requests for frontend integration.
 
 ✉️ Email Notifications
-- 🚀 **SMTP Integration**: Reliable delivery of system emails for password resets using Nodemailer and Handlebars templates.
+- 🚀 **SMTP Integration**: Reliable delivery of system emails for password resets using _Nodemailer_ and _Handlebars_ templates.
 
 ## Getting Started (Backend)
 1️⃣ Clone the repository
