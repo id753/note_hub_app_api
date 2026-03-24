@@ -7,7 +7,8 @@
 
 
 ##  🛠️ Backend Tech Stack
-### Node.js, Express.js, MongoDB & Mongoose, Joi & Celebrate (validation), Cloudinary (image storage), Nodemailer (emails), bcrypt (password hashing), JWT (password reset tokens), Pino (logging), Multer (file uploads)
+### Node.js, Express.js, MongoDB & Mongoose, Joi & Celebrate (validation), Cloudinary (image storage), bcrypt (password hashing), JWT (password reset tokens), Pino (logging), Multer (file uploads)
+<!--### Node.js, Express.js, MongoDB & Mongoose, Joi & Celebrate (validation), Cloudinary (image storage), Nodemailer (emails), bcrypt (password hashing), JWT (password reset tokens), Pino (logging), Multer (file uploads)-->
 ### Dev Tools & Environment: dotenv (environment variables), ES Modules (import/export), CORS configuration, async/await, Postman (API testing), Render (deployment)
 
 ## ⚡Features
